@@ -1,0 +1,44 @@
+{
+    "type": "module",
+    "private": true,
+    "scripts": {
+        "dev": "next dev",
+        "build": "next build",
+        "start": "next start",
+        "test": "ts-node scripts/testSupabase.ts"
+    },
+    "dependencies": {
+        "@emotion/react": "^11.13.3",
+        "@emotion/styled": "^11.13.0",
+        "@hookform/resolvers": "^3.9.0",
+        "@mui/icons-material": "^5.16.7",
+        "@mui/material": "^5.16.7",
+        "@radix-ui/react-checkbox": "^1.0.4",
+        "@radix-ui/react-label": "^2.0.2",
+        "@radix-ui/react-separator": "^1.0.3",
+        "@radix-ui/react-slot": "^1.0.2",
+        "@supabase/ssr": "^0.3.0",
+        "@supabase/supabase-js": "^2.42.5",
+        "autoprefixer": "10.4.17",
+        "class-variance-authority": "^0.7.0",
+        "clsx": "^2.1.0",
+        "geist": "^1.2.1",
+        "lucide-react": "^0.372.0",
+        "next": "latest",
+        "postcss": "8.4.33",
+        "react": "18.2.0",
+        "react-dom": "18.2.0",
+        "react-hook-form": "^7.52.2",
+        "tailwind-merge": "^2.3.0",
+        "tailwindcss": "3.4.1",
+        "tailwindcss-animate": "^1.0.7",
+        "zod": "^3.23.8"
+    },
+    "devDependencies": {
+        "@types/node": "^20.11.5",
+        "@types/react": "18.2.48",
+        "@types/react-dom": "18.2.18",
+        "ts-node": "^10.9.2",
+        "typescript": "^5.5.4"
+    }
+}
