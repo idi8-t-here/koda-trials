@@ -39,7 +39,7 @@ export async function emailLogin(formData: FormData) {
   redirect('/todos')
 }
 
-export async function signup(formData: FormData) {
+export async function signups(formData: FormData) {
   const supabase = createClient()
 
   // Parse and validate the form data
