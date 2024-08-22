@@ -7,10 +7,7 @@ export async function GET(request: Request) {
     const code = searchParams.get('code')
     const next = searchParams.get('next') ?? '/todos'
 
-    const origin =
-        process.env.NODE_ENV === 'development'
-            ? 'http://localhost:3000'
-            : 'https://koda-trials.vercel.app'
+    const origin = process.env.NEXT_PUBLIC_SITE_URL || 'https://koda-trials.vercel.app'
 
     if (code) {
         const cookieStore = cookies()
@@ -33,10 +30,11 @@ export async function GET(request: Request) {
         )
         const { error } = await supabase.auth.exchangeCodeForSession(code)
         if (!error) {
-            return NextResponse.redirect(`${origin}${next}`)
+            // Use NextResponse.redirect with the full URL
+            return NextResponse.redirect(new URL(next, origin))
         }
     }
 
-    return NextResponse.redirect(`${origin}/login?message=Could not login with provider`)
+    // If there's an error, redirect to login
+    return NextResponse.redirect(new URL('/login?message=Could not login with provider', origin))
 }
-
